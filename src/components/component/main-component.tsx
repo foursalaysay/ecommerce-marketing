@@ -29,11 +29,21 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { JSX, SVGProps } from "react"
 
+
+
 // IMAGES
 import Image from "next/image"
 import mugnaBackground from '../images/mugnabg.jpg'
 
 export function MainComponent() {
+
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="fixed top-0 left-0 right-0 z-100 bg-background/80 backdrop-blur-md px-4 lg:px-6 h-14 flex items-center">
@@ -178,7 +188,10 @@ export function MainComponent() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted" id="product">
+        <section
+          className="w-full py-12 md:py-24 lg:py-32 bg-muted" 
+          id="product" 
+          >
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
