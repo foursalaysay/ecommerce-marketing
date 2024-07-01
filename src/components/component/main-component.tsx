@@ -35,6 +35,9 @@ import { JSX, SVGProps } from "react"
 import Image from "next/image"
 import mugnaBackground from '../images/mugnabg.jpg'
 
+import { motion } from 'framer-motion';
+
+
 export function MainComponent() {
 
   const handleScroll = (id: string) => {
@@ -188,9 +191,12 @@ export function MainComponent() {
             </div>
           </div>
         </section>
-        <section
+        <motion.section
           className="w-full py-12 md:py-24 lg:py-32 bg-muted" 
           id="product" 
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           >
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -272,7 +278,7 @@ export function MainComponent() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
