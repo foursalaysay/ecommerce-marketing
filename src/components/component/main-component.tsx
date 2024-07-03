@@ -34,8 +34,10 @@ import { JSX, SVGProps } from "react"
 // IMAGES
 import Image from "next/image"
 import mugnaBackground from '../images/mugnabg.jpg'
+import product from '../images/product.jpg'
 
 import { motion } from 'framer-motion';
+import { FacebookImage, InstagramImage, LocationImage, TiktokImage } from "./image-index"
 
 
 export function MainComponent() {
@@ -49,9 +51,13 @@ export function MainComponent() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="fixed top-0 left-0 right-0 z-100 bg-background/80 backdrop-blur-md px-4 lg:px-6 h-14 flex items-center">
+      <header className="fixed top-5 left-0 right-0 z-100 w-full bg-white backdrop-blur-lg px-4 lg:px-6 h-16 lg:h-20 flex items-center">
         <Link href="#" className="flex items-center justify-center" prefetch={false}>
-          <MountainIcon className="h-6 w-6" />
+          <Image
+          src={mugnaBackground}
+          alt="logo"
+          className="p-4 w-24 h-24 lg:w-[200px] lg:h-[200px]"
+          />
           <span className="sr-only">Mugna</span>
         </Link>
         <NavigationMenu className="ml-auto hidden lg:flex">
@@ -119,7 +125,7 @@ export function MainComponent() {
           </SheetContent>
         </Sheet>
       </header>
-      <main className="flex-1 pt-14">
+      <main className="flex-1 pt-16 lg:pt-5">
         <section className="relative w-full py-12 md:py-24 lg:py-32 z-0">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
@@ -129,7 +135,7 @@ export function MainComponent() {
                     Discover the Natural Beauty of Woven Art
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Explore our innovative products and services designed to revolutionize the way you shop.
+                    Discover our groundbreaking products crafted to transform your shopping experience.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -148,10 +154,46 @@ export function MainComponent() {
                     Contact Us
                   </Link>
                 </div>
+                <hr />
+                {/* THIS IS FOR THE SOCMED ACCOUNTS */}
+                <div className="flex flex-row gap-5 justify-center lg:justify-start">
+                  <a href="https://www.facebook.com/wearmugna">
+                  <Image 
+                  src={FacebookImage}
+                  alt="facebook"
+                  className="rounded hover:scale-110 cursor-pointer h-7 w-7"
+                  />
+                  </a>
+                  <a href="https://www.instagram.com/mugnacebu/">
+                  <Image 
+                  src={InstagramImage}
+                  alt="instagram"
+                  className="rounded hover:scale-110 cursor-pointer h-7 w-7"
+                  />
+                  </a>
+                  <a href="https://www.tiktok.com/@mugnacebu">
+                   <Image 
+                  src={TiktokImage}
+                  alt="tiktok"
+                  className="rounded hover:scale-110 cursor-pointer h-7 w-7"
+                  />
+                  </a>
+                  <a href="https://maps.app.goo.gl/n9BGfMq9XJx1hEVW8">
+                   <Image 
+                  src={LocationImage}
+                  alt="location"
+                  className="rounded hover:scale-110 cursor-pointer h-7 w-7"
+                  />
+                  </a>
+                  
+                </div>
+                <div>
+
+                </div>
               </div>
               <div className="relative z--1 flex justify-center">
                 <Image
-                  src={mugnaBackground}
+                  src={product}
                   width={300}
                   height={300}
                   alt="bg"
@@ -191,12 +233,10 @@ export function MainComponent() {
             </div>
           </div>
         </section>
-        <motion.section
+        <section
           className="w-full py-12 md:py-24 lg:py-32 bg-muted" 
           id="product" 
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+         
           >
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -278,7 +318,7 @@ export function MainComponent() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </section>
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -341,7 +381,6 @@ export function MainComponent() {
                 width={500}
                 height={500}
                 alt="yeah"
-                
                  />
               </div>
             </div>
