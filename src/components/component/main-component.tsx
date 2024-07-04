@@ -33,10 +33,8 @@ import { JSX, SVGProps } from "react"
 
 // IMAGES
 import Image from "next/image"
-import mugnaBackground from '../images/mugnabg.jpg'
+import mugnaBackground from '../images/mugnabg.png'
 import product from '../images/product.jpg'
-
-import { motion } from 'framer-motion';
 import { FacebookImage, InstagramImage, LocationImage, TiktokImage } from "./image-index"
 
 
@@ -51,7 +49,7 @@ export function MainComponent() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="fixed top-5 left-0 right-0 z-100 w-full bg-white backdrop-blur-lg px-4 lg:px-6 h-16 lg:h-20 flex items-center">
+      <header className="fixed top-0 left-0 right-0 z-10 w-full bg-white backdrop-blur px-4 lg:px-6 h-16 lg:h-[84px] flex items-center">
         <Link href="#" className="flex items-center justify-center" prefetch={false}>
           <Image
           src={mugnaBackground}
@@ -60,7 +58,7 @@ export function MainComponent() {
           />
           <span className="sr-only">Mugna</span>
         </Link>
-        <NavigationMenu className="ml-auto hidden lg:flex">
+        <NavigationMenu className="ml-auto hidden lg:flex font-poppins">
           <NavigationMenuList>
             <NavigationMenuLink asChild>
               <Link
@@ -172,14 +170,14 @@ export function MainComponent() {
                   />
                   </a>
                   <a href="https://www.tiktok.com/@mugnacebu">
-                   <Image 
+                  <Image 
                   src={TiktokImage}
                   alt="tiktok"
                   className="rounded hover:scale-110 cursor-pointer h-7 w-7"
                   />
                   </a>
                   <a href="https://maps.app.goo.gl/n9BGfMq9XJx1hEVW8">
-                   <Image 
+                  <Image 
                   src={LocationImage}
                   alt="location"
                   className="rounded hover:scale-110 cursor-pointer h-7 w-7"
